@@ -1,0 +1,20 @@
+@import 'bootstrap/bootstrap.scss';
+@import 'font-awesome.scss';
+@import 'components/index.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
