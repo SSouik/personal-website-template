@@ -9,7 +9,7 @@ const Banner = () => {
                     <br/>
                     <span>Job Title</span>
                 </div>
-                <div className='col-md-6'>
+                <div className='col-md-6 p-3'>
                     <p className='bio'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna 

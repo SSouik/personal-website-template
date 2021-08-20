@@ -21,4 +21,24 @@
             background-color: $primary;
         }
     }
+
+    @include media-breakpoint-down(md) {
+        span {
+          font-size: 16px;
+        }
+
+        .bar-bg {
+            width: 150px;
+        }
+      }
+      
+    @include media-breakpoint-down(sm) {
+        span {
+          font-size: 14px;
+        }
+
+        .bar-bg {
+            width: 125px;
+        }
+    }
 }

@@ -48,6 +48,10 @@
     }
 
     @include media-breakpoint-down(md) {
+        .name {
+            font-size: 28px;
+        }
+
         .bio {
             font-size: 16px;
         }
@@ -55,6 +59,7 @@
 
     @include media-breakpoint-down(sm) {
         .name {
+            font-size: 24px;
             border-bottom: 1px solid $dark;
         }
 

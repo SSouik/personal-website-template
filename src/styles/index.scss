@@ -8,6 +8,7 @@ body {
   margin: 0;
   font-family: Helvetica Neue, sans-serif;
   overflow-x: hidden;
+  font-size: 18px;
 }
 
 a {
@@ -26,4 +27,16 @@ h4,
 h5,
 h6 {
   color: $dark;
+}
+
+@include media-breakpoint-down(md) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  body {
+    font-size: 14px;
+  }
 }
