@@ -1,51 +1,16 @@
-.bg-image {
-    background-image: url('/images/banner-bg.jpg');
-}
-
-.bg-wrap {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    z-index: -1;
-
-    .bg-container {
-        display: block;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        box-sizing: border-box;
-        margin: 0;
-    }
-
-    .banner-text {
-        margin: 0;
-        font-size: 2rem;
-        line-height: 3rem;
-        text-align: center;
-        padding-top: 40vh;
-        text-shadow: 1px 1px 1
-    }
-}
-
 .banner {
     height: 100vh;
     width: 100vw;
     background-image: url('/images/banner-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-
     
-
     .banner-row {
         @extend .row;
         justify-content: center;
         align-items: center;
         height: 90%;
-        color: $gray-300;
+        color: $dark;
     }
 
     .name {
@@ -54,33 +19,47 @@
     }
 
     .bio {
+        position: relative;
         font-size: 18px;
+        color: $dark;
     }
+
+    // .about-me {
+    //     position: absolute;
+    //     color: $primary;
+    //     font-size: 64px;
+    //     top: 50%;
+    //     -ms-transform: translateY(-50%);
+    //     transform: translateY(-50%);
+    // }
 
     .banner-arrow {
         @extend .fa;
         @extend .fa-arrow-circle-o-down;
-        font-size: 32px;
-        color: $gray-300;
+        position: absolute;
+        bottom: 15px;
+        font-size: 48px;
+        color: $primary;
 
         &:hover {
             cursor: pointer;
-            color: darken($gray-300, 30%)
+            color: darken($primary, 15%)
         }
-    }
-
-    // General Styles
-    .divider {
-        height: 70%;
-        width: 2px;
-        background-color: $gray-600;
     }
 
     @include media-breakpoint-down(md) {
-        .divider {
-            margin-top: 20px;
-            height: 2px;
-            width: 70%;
+        .bio {
+            font-size: 16px;
         }
     }
+
+    @include media-breakpoint-down(sm) {
+        .name {
+            border-bottom: 1px solid $dark;
+        }
+
+        .bio {
+            font-size: 14px;
+        }
+    }   
 }
