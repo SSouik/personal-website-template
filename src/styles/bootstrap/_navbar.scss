@@ -23,6 +23,12 @@
   justify-content: space-between; // space out brand from logo
   padding: $navbar-padding-y $navbar-padding-x;
 
+  // animation
+  -moz-transition: all .6s ease-in;
+  -o-transition: all .6s ease-in;
+  -webkit-transition: all .6s ease-in;
+  transition: all .6s ease-in;
+
   // Because flex properties aren't inherited, we need to redeclare these first
   // few properties so that content nested within behave properly.
   %container-flex-properties {
@@ -42,6 +48,11 @@
       @extend %container-flex-properties;
     }
   }
+
+  &.scrolled {
+    background-color: $primary;
+    color: $gray-200;
+  }
 }
 
 
@@ -60,6 +71,29 @@
 
   @include hover-focus() {
     text-decoration: none;
+  }
+
+  // custom
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid $primary;
+    color: $primary;
+
+    -moz-transition: all .6s ease-in;
+    -o-transition: all .6s ease-in;
+    -webkit-transition: all .6s ease-in;
+    transition: all .6s ease-in;
+
+    &.scrolled {
+      color: $gray-200;
+      border-color: $gray-200;
+    }
   }
 }
 
@@ -180,6 +214,7 @@
           .nav-link {
             padding-right: $navbar-nav-link-padding-x;
             padding-left: $navbar-nav-link-padding-x;
+            cursor: pointer;
           }
         }
 
