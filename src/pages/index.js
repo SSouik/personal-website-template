@@ -1,10 +1,9 @@
 import React from 'react';
-import { Banner, Experience, Nav, Skillbar } from '../components';
+import { Banner, Experience, Skillbar } from '../components';
 
 export default function Home() {
     return (
         <div>
-            <Nav/>
             <Banner/>
             <div className='row mt-5'>
                 <div id='experience' className='col-md-6 p-5 text-center'>

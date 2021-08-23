@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const Nav = () => {
     const [showNavItems, setShowNavItems] = useState(false);
@@ -44,8 +45,24 @@ const Nav = () => {
 
             <div className={`collapse navbar-collapse ${showNavItems && 'show'}`} id='navbarSupportedContent'>
                 <div className='navbar-nav ml-auto'>
-                    <a className='nav-item nav-link' onClick={() => setShowNavItems(false)} to='/'>Link 1</a>
-                    <a className='nav-item nav-link' onClick={() => setShowNavItems(false)} to='/'>Link 2</a>
+                    <Link
+                        onClick={() => setShowNavItems(false)} 
+                        href='/skills'
+                    >
+                        <a className='nav-item nav-link'>Skills</a>
+                    </Link>
+                    <Link
+                        onClick={() => setShowNavItems(false)} 
+                        href='/about'
+                    >
+                        <a className='nav-item nav-link'>About</a>
+                    </Link>
+                    <Link
+                        onClick={() => setShowNavItems(false)} 
+                        href='/contact'
+                    >
+                        <a className='nav-item nav-link'>Contact</a>
+                    </Link>
                 </div>
             </div>
         </nav>
