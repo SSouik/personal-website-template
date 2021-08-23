@@ -22,7 +22,12 @@ const Banner = () => {
                         deserunt mollit anim id est laborum
                     </p>
                 </div>
-                <i className='banner-arrow'/>
+                <i
+                    className='banner-arrow'
+                    onClick={() => {
+                        window.location.assign('#experience');
+                    }}
+                />
             </div>
         </div>
     )

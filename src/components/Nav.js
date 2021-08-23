@@ -26,7 +26,7 @@ const Nav = () => {
         <nav className='navbar navbar-expand-md fixed-top'>
             <div className='navbar-brand'>
                 <div className='logo'>
-                    SS
+                    FL
                 </div>
             </div>
             <button

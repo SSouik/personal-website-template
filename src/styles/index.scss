@@ -9,6 +9,7 @@ body {
   font-family: Helvetica Neue, sans-serif;
   overflow-x: hidden;
   font-size: 18px;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -39,4 +40,12 @@ h6 {
   body {
     font-size: 14px;
   }
+}
+
+.primary {
+  color: $primary;
+}
+
+.secondary {
+  color: $secondary;
 }
