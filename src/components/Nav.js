@@ -111,17 +111,6 @@ const Nav = () => {
                             About
                         </a>
                     </Link>
-                    <Link href='/contact'>
-                        <a 
-                            className='nav-item nav-link'
-                            onClick={() => {
-                                setShowNavItems(false);
-                                removeColor();
-                            }}
-                        >
-                            Contact
-                        </a>
-                    </Link>
                 </div>
             </div>
         </nav>

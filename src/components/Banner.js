@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Banner = () => {
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            const arrow = document.getElementById('banner-arrow');
+
+            if (!arrow) return;
+
+            if (window.scrollY >= 90) {
+                arrow.classList.add('hide');
+            }
+            else {
+                arrow.classList.remove('hide');
+            }
+        })}, []);
+
     return (
         <div className='banner'>
             <div className='banner-row p-5'>
@@ -23,6 +37,7 @@ const Banner = () => {
                     </p>
                 </div>
                 <i
+                    id='banner-arrow'
                     className='banner-arrow'
                     onClick={() => {
                         window.location.assign('#experience');

@@ -32,9 +32,18 @@
         font-size: 48px;
         color: $primary;
 
+        -moz-transition: all .6s ease-in;
+        -o-transition: all .6s ease-in;
+        -webkit-transition: all .6s ease-in;
+        transition: all .6s ease-in;
         &:hover {
             cursor: pointer;
             color: darken($primary, 15%)
+        }
+
+        &.hide {
+            visibility: hidden;
+            opacity: 0;
         }
     }
 
