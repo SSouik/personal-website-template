@@ -1,14 +1,15 @@
 import '../styles/index.scss'
 
-import { Nav } from '../components';
+import { Nav, Footer } from '../components';
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <div>
-      <Nav/>
-      <Component {...pageProps} />
-    </div>
-  )
+    return (
+        <div>
+            <Nav/>
+            <Component {...pageProps} />
+            <Footer/>
+        </div>
+    )
 }
 
 export default MyApp

@@ -1,5 +1,10 @@
 import React from 'react';
-import { Banner, Experience, Reference, Skillbar } from '../components';
+import { 
+    Banner, 
+    Experience,
+    Reference, 
+    Skillbar 
+} from '../components';
 
 export default function Home() {
     return (
@@ -7,7 +12,7 @@ export default function Home() {
             <Banner/>
             <div className='row mt-5'>
                 <div id='experience' className='col-md-6 p-5 text-center'>
-                    <h2>Experience</h2>
+                    <h2 className='section-header'>Experience</h2>
                     <hr/>
                     <Experience
                         company='Company 1, Inc.'
@@ -39,7 +44,7 @@ export default function Home() {
                     </Experience>
                 </div>
                 <div id='skills' className='col-md-6 p-5 text-center'>
-                    <h2>Skills</h2>
+                    <h2 className='section-header'>Skills</h2>
                     <hr/>
                     <Skillbar label='Skill 1' percentage='80%'/>
                     <Skillbar label='Skill 2' percentage='45%'/>
@@ -50,7 +55,7 @@ export default function Home() {
             </div>
             <div className='row mt-2 text-center'>
                 <div className='col-md-12 p-5'>
-                    <h2>References</h2>
+                    <h2 className='section-header'>References</h2>
                     <hr/>
                 </div>
             </div>
