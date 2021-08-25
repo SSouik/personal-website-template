@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner, Experience, Skillbar } from '../components';
+import { Banner, Experience, Reference, Skillbar } from '../components';
 
 export default function Home() {
     return (
@@ -46,6 +46,59 @@ export default function Home() {
                     <Skillbar label='Skill 3' percentage='30%'/>
                     <Skillbar label='Skill 4' percentage='90%'/>
                     <Skillbar label='Skill 5' percentage='60%'/>
+                </div>
+            </div>
+            <div className='row mt-2 text-center'>
+                <div className='col-md-12 p-5'>
+                    <h2>References</h2>
+                    <hr/>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col-lg-4 pl-5 pr-5'>
+                    <Reference
+                        name='John Doe'
+                        location='Fake Co. | Milwaukee, WI'
+                        quote='Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip 
+                        ex ea commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore eu 
+                        fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia 
+                        deserunt mollit anim id est laborum'
+                    />
+                </div>
+                <div className='col-lg-4 pl-5 pr-5'>
+                    <Reference
+                        name='John Doe'
+                        location='Fake Co. | Milwaukee, WI'
+                        quote='Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip 
+                        ex ea commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore eu 
+                        fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia 
+                        deserunt mollit anim id est laborum'
+                    />
+                </div>
+                <div className='col-lg-4 pl-5 pr-5'>
+                    <Reference
+                        name='John Doe'
+                        location='Fake Co. | Milwaukee, WI'
+                        quote='Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna 
+                        aliqua. Ut enim ad minim veniam, quis nostrud 
+                        exercitation ullamco laboris nisi ut aliquip 
+                        ex ea commodo consequat. Duis aute irure dolor in 
+                        reprehenderit in voluptate velit esse cillum dolore eu 
+                        fugiat nulla pariatur. Excepteur sint occaecat 
+                        cupidatat non proident, sunt in culpa qui officia 
+                        deserunt mollit anim id est laborum'
+                    />
                 </div>
             </div>
         </div>

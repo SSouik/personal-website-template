@@ -1,0 +1,34 @@
+.reference {
+    display: flex;
+    flex-direction: column;
+
+    .quote {
+        border-left: solid 5px $secondary;
+        font-size: 16px;
+        &:before {
+            @extend .fa;
+            @extend .fa-quote-left;
+            padding-right: 5px;
+            color: $secondary;
+            font-size: 16px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .quote {
+            font-size: 14px;
+            &:before {
+                font-size: 14px;
+            }
+        }
+      }
+      
+    @include media-breakpoint-down(sm) {
+        .quote {
+            font-size: 12px;
+            &:before {
+                font-size: 12px;
+            }
+        }
+    }
+}
