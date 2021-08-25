@@ -1,37 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const Nav = () => {
-    const [showNavItems, setShowNavItems] = useState(false);
+    const [showNavItems, _setShowNavItems] = useState(false);
+
+    const stateRef = useRef(showNavItems);
+
+    const setShowNavItems = (flag) => {
+        stateRef.current = flag;
+        _setShowNavItems(flag);
+    }
+
+    const addColor = () => {
+        document.getElementById('nav-bar')
+            .classList.add('color-fill');
+
+        document.getElementById('logo')
+            .classList.add('color-fill');
+
+        document.getElementById('menu')
+            .classList.add('color-fill');
+    }
+
+    const removeColor = () => {
+        document.getElementById('nav-bar')
+            .classList.remove('color-fill');
+
+        document.getElementById('logo')
+            .classList.remove('color-fill');
+
+        document.getElementById('menu')
+            .classList.remove('color-fill');
+    }
+
+    const handleScroll = () => {
+        if (window.scrollY >= 90) {
+            addColor();
+        }
+        else if (!stateRef.current) {
+            removeColor();
+        }
+    }
 
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY >= 90) {
-                document.getElementsByClassName('navbar')[0]
-                    .classList.add('scrolled');
-
-                document.getElementsByClassName('logo')[0]
-                    .classList.add('scrolled');
-            }
-            else {
-                document.getElementsByClassName('navbar')[0]
-                    .classList.remove('scrolled');
-
-                document.getElementsByClassName('logo')[0]
-                    .classList.remove('scrolled');
-            }
-        }
-    )});
+        window.addEventListener('scroll', handleScroll);
+    }, []);
 
     return (
-        <nav className='navbar navbar-expand-md fixed-top'>
+        <nav id='nav-bar'className='navbar navbar-expand-md fixed-top'>
             <div className='navbar-brand'>
-                <div className='logo'>
-                    FL
-                </div>
+                <Link href='/'>
+                    <a 
+                        style={{ textDecoration: 'none' }}
+                        onClick={() => {
+                            setShowNavItems(false);
+                            removeColor();
+                        }}
+                    >
+                        <div id='logo' className='logo'>
+                            FL
+                        </div>
+                    </a>
+                </Link>
             </div>
             <button
-                onClick={() => setShowNavItems(!showNavItems)} 
+                onClick={() => {
+                    const show = !showNavItems;
+
+                    if (show) {
+                        addColor();
+                    }
+                    else if (window.scrollY < 90) {
+                        removeColor();
+                    }
+
+                    setShowNavItems(show);
+                }}
                 className={`navbar-toggler ${showNavItems && 'collapsed'}`} 
                 type='button' 
                 data-toggle='collapse' 
@@ -40,28 +84,43 @@ const Nav = () => {
                 aria-expanded='false'
                 aria-label='Toggle navigation'
             >
-                <i className='fa fa-lg fa-bars' style={{ color: 'white' }}/>
+                <i id='menu' className='fa fa-lg fa-bars'/>
             </button>
 
             <div className={`collapse navbar-collapse ${showNavItems && 'show'}`} id='navbarSupportedContent'>
                 <div className='navbar-nav ml-auto'>
-                    <Link
-                        onClick={() => setShowNavItems(false)} 
-                        href='/skills'
-                    >
-                        <a className='nav-item nav-link'>Skills</a>
+                    <Link href='/skills'>
+                        <a 
+                            className='nav-item nav-link'
+                            onClick={() => {
+                                setShowNavItems(false);
+                                removeColor();
+                            }}
+                        >
+                            Skills
+                        </a>
                     </Link>
-                    <Link
-                        onClick={() => setShowNavItems(false)} 
-                        href='/about'
-                    >
-                        <a className='nav-item nav-link'>About</a>
+                    <Link href='/about'>
+                        <a 
+                            className='nav-item nav-link'
+                            onClick={() => {
+                                setShowNavItems(false);
+                                removeColor();
+                            }}
+                        >
+                            About
+                        </a>
                     </Link>
-                    <Link
-                        onClick={() => setShowNavItems(false)} 
-                        href='/contact'
-                    >
-                        <a className='nav-item nav-link'>Contact</a>
+                    <Link href='/contact'>
+                        <a 
+                            className='nav-item nav-link'
+                            onClick={() => {
+                                setShowNavItems(false);
+                                removeColor();
+                            }}
+                        >
+                            Contact
+                        </a>
                     </Link>
                 </div>
             </div>

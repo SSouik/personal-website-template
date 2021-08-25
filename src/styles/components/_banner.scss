@@ -24,15 +24,6 @@
         color: $dark;
     }
 
-    // .about-me {
-    //     position: absolute;
-    //     color: $primary;
-    //     font-size: 64px;
-    //     top: 50%;
-    //     -ms-transform: translateY(-50%);
-    //     transform: translateY(-50%);
-    // }
-
     .banner-arrow {
         @extend .fa;
         @extend .fa-arrow-circle-o-down;
