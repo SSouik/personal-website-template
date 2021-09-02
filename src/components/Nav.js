@@ -42,6 +42,10 @@ const Nav = () => {
         }
     }
 
+    const handleLinkClick = () => {
+        window.scrollTop(0);
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
     }, []);
@@ -55,6 +59,7 @@ const Nav = () => {
                         onClick={() => {
                             setShowNavItems(false);
                             removeColor();
+                            handleLinkClick();
                         }}
                     >
                         <div id='logo' className='logo'>
@@ -95,6 +100,7 @@ const Nav = () => {
                             onClick={() => {
                                 setShowNavItems(false);
                                 removeColor();
+                                handleLinkClick();
                             }}
                         >
                             Skills
@@ -106,6 +112,7 @@ const Nav = () => {
                             onClick={() => {
                                 setShowNavItems(false);
                                 removeColor();
+                                handleLinkClick();
                             }}
                         >
                             About
