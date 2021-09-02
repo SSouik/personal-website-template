@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Nav from './Nav';
 import Reference from './Reference';
 import Skillbar from './SkillBar';
+import SkillExperience  from './SkillExperience';
 
 export {
     Banner,
@@ -11,5 +12,6 @@ export {
     Footer,
     Nav,
     Reference,
-    Skillbar
+    Skillbar,
+    SkillExperience
 }
