@@ -1,12 +1,12 @@
 {
   "name": "personal-website-template",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint -c .eslintrc.yml --quiet --ext .js src"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -16,7 +16,12 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0"
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "11.1.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-react": "^7.25.1",
+    "jest": "^27.1.0"
   }
 }

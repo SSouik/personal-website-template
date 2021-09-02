@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Experience = ({ company, datesWorked, children }) => {
     return (
@@ -10,6 +11,12 @@ const Experience = ({ company, datesWorked, children }) => {
             </p>
         </div>
     )
+}
+
+Experience.propTypes = {
+    company: PropTypes.string.isRequired,
+    datesWorked: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
 }
 
 export default Experience;

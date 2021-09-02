@@ -1,0 +1,127 @@
+env:
+  browser: true
+  es2020: true
+  node: true
+  jest: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:react/recommended'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 11
+  sourceType: module
+parser: 'babel-eslint'
+plugins:
+  - react
+  - babel
+rules: {
+  # POSSIBLE ERROR RULES
+  'for-direction': 'error',
+  'getter-return': 'error',
+  'no-async-promise-executor': 'error',
+  'no-compare-neg-zero': 'error',
+  'no-cond-assign': 'error',
+  'no-constant-condition': 'error',
+  'no-control-regex': 'error',
+  'no-debugger': 'warn',
+  'no-dupe-args':  'error',
+  'no-dupe-else-if': 'error',
+  'no-dupe-keys': 'error',
+  'no-duplicate-case': 'error',
+  'no-empty': 'error',
+  'no-empty-character-class': 'error',
+  'no-ex-assign': 'error',
+  'no-extra-boolean-cast': 'error',
+  'no-extra-parens': 'warn',
+  'no-extra-semi': 'error',
+  'no-func-assign': 'error',
+  'no-import-assign': 'error',
+  'no-inner-declarations': 'error',
+  'no-invalid-regexp': 'error',
+  'no-irregular-whitespace': 'error',
+  'no-misleading-character-class': 'error',
+  'no-obj-calls': 'error',
+  'no-prototype-builtins': 'error',
+  'no-regex-spaces': 'error',
+  'no-setter-return': 'error',
+  'no-sparse-arrays': 'error',
+  'no-unexpected-multiline': 'error',
+  'no-unreachable': 'error',
+  'no-unreachable-loop': 'error',
+  'no-unsafe-finally': 'error',
+  'no-unsafe-negation': 'error',
+  'use-isnan': 'error',
+  'valid-typeof': 'error',
+  # END OF POSSIBLE ERROR RULES
+
+  # BEST PRACTICES RULES
+  'array-callback-return': 'error',
+  'block-scoped-var': 'error',
+  'class-methods-use-this': ['warn', { 'exceptMethods': [] }],
+  'default-case': 'warn',
+  'default-case-last': 'warn',
+  'default-param-last': 'warn',
+  'dot-location': ['warn', 'property'],
+  'dot-notation': 'warn',
+  'eqeqeq': 'error',
+  'no-alert': 'error',
+  'no-constructor-return': 'error',
+  'no-empty-function': 'error',
+  'no-extra-bind': 'warn',
+  'no-extra-label': 'warn',
+  'no-floating-decimal': 'error',
+  'no-global-assign': 'error',
+  'no-invalid-this': 'warn',
+  'no-multi-spaces': 'warn',
+  'no-octal': 'error',
+  'no-param-reassign': 'warn',
+  'no-proto': 'error',
+  'no-redeclare': 'warn',
+  'no-return-assign': 'error',
+  'no-return-await': 'error',
+  'no-script-url': 'warn',
+  'no-self-assign': 'warn',
+  'no-self-compare': 'warn',
+  'no-sequences': 'error',
+  'no-unused-expressions': 'warn',
+  'no-unused-labels': 'error',
+  'no-useless-call': 'error',
+  'no-useless-catch': 'warn',
+  'no-useless-concat': 'warn',
+  'no-useless-escape': 'warn',
+  'no-useless-return': 'warn',
+  'no-with': 'error',
+  'require-await': 'error',
+  'wrap-iife': 'error',
+  # END OF BEST PRACTICES RULES
+
+  # VARIABLES
+  'no-shadow': 'warn',
+  'no-undef': 'error',
+  'no-undef-init': 'error',
+  'no-unused-vars': 'error',
+  'no-use-before-define': 'error',
+  # END VARIABLES
+
+  # STYLISTIC
+  'block-spacing': ['warn', 'always'],
+  'camelcase': ['warn', { 'properties': 'always' }],
+  'comma-dangle': ['warn', 'never'],
+  'comma-spacing': ['warn', { 'before': false, 'after': true }],
+  'quotes': ['warn', 'single'],
+  'semi': ['warn', 'always'],
+  # END STYLISTIC
+
+  'react/no-unescaped-entities': 'off'
+}
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - .jsx
+        - .js
+        - .json
+  react:
+    pragma: React
+    version: '16.0'

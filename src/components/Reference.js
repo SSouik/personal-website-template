@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Reference = ({ name, location, quote }) => {
     return (
@@ -8,6 +9,12 @@ const Reference = ({ name, location, quote }) => {
             <p className='quote p-3'>{quote}</p>
         </div>
     )
+}
+
+Reference.propTypes = {
+    name: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    quote: PropTypes.string.isRequired
 }
 
 export default Reference;
