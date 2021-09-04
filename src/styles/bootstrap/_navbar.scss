@@ -49,9 +49,15 @@
     }
   }
 
+  color: $primary;
   &.color-fill {
     background-color: $primary;
     color: $gray-200;
+    a {
+      &:hover {
+        color: darken($gray-200, 20%);
+      }
+    }
   }
 
   i {
@@ -62,6 +68,12 @@
     color: $primary;
     &.color-fill {
       color: $gray-200;
+    }
+  }
+
+  a {
+    &:hover {
+      color: darken($primary, 20%);
     }
   }
 }

@@ -7,6 +7,69 @@
     padding: 0px 1.0875rem 1.45rem;
 }
 
+#not-found {
+    height: calc(100vh - 275px);
+    margin-top: 150px;
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-header {
+        position: relative;
+
+        .bg-header {
+            color: $gray-400;
+            font-weight: bolder;
+            font-size: 172px;
+        }
+    
+        .fg-header {
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            z-index: 100;
+            margin-left: 20px;
+            color: $primary;
+            color: 42px;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .section-header {
+            position: relative;
+    
+            .bg-header {
+                color: $gray-400;
+                font-weight: bolder;
+                font-size: 148px;
+            }
+
+            .fg-header {
+                font-size: 32px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .section-header {
+            position: relative;
+    
+            .bg-header {
+                color: $gray-400;
+                font-weight: bolder;
+                font-size: 124px;
+            }
+
+            .fg-header {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
 #about, #skills {
     margin-top: 150px;
 

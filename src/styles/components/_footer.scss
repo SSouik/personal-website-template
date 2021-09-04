@@ -1,4 +1,6 @@
 .footer {
+    position: relative;
+    bottom: 0px;
     height: 125px;
     @extend .container-fluid;
     background-color: $gray-200;
