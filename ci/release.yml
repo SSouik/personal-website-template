@@ -1,4 +1,4 @@
-name: Build, Test & Deploy (Production)
+name: Release
 
 on:
   push:
@@ -25,8 +25,8 @@ jobs:
         run: yarn
       - name: Build the code
         run: yarn build-export
-      - name: Run linter and tests
-        run: yarn test
+      - name: Run linter
+        run: yarn lint
       - name: Save build artifact
         uses: actions/upload-artifact@v2
         with:
