@@ -1,0 +1,56 @@
+name: Build, Test & Deploy (Production)
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - 'docs/**' # Do not run this workflow if only files within the docs directory are changed
+      - 'README.md'
+      - 'LICENSE*'
+jobs:
+  Install-Build-Test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install project dependencies
+        run: yarn
+      - name: Build the code
+        run: yarn build-export
+      - name: Run linter and tests
+        run: yarn test
+      - name: Save build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifact
+          path: out/
+          if-no-files-found: error # if no files found, throw an error
+          retention-days: 7 # Keep artifacts in GitHub for a week
+  Deploy:
+    needs: Install-Build-Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifact
+          path: build
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
+      - name: Deploy To S3 & Cloudfront
+        run: |
+          aws s3 sync build s3://mybucket \
+          aws cloudfront create-invalidation --distribution-id mydistribution
+      
