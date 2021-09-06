@@ -43,7 +43,7 @@ export default function Home() {
                         deserunt mollit anim id est laborum
                     </Experience>
                 </div>
-                <div id='skills' className='col-md-6 p-5 text-center'>
+                <div className='col-md-6 p-5 text-center'>
                     <h2 className='section-header'>Skills</h2>
                     <hr/>
                     <Skillbar label='Skill 1' percentage='80%'/>
