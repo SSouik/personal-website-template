@@ -34,6 +34,12 @@ jobs:
           path: out/
           if-no-files-found: error # if no files found, throw an error
           retention-days: 7 # Keep artifacts in GitHub for a week
+      - name: Create Tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          RELEASE_BRANCHES: main
   Deploy:
     needs: Install-Build-Test
     runs-on: ubuntu-latest
