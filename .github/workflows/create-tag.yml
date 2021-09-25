@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
 jobs:
-  Initialize-Validate-Plan:
+  Tag/Release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the source code
