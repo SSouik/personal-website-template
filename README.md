@@ -6,7 +6,7 @@ This repo serves as a template to help you get started making a personal/resume 
 
 # Table of Contents
 1. [What is React](#what-is-react)
-2. [What is Next.js](#what-is-next.js)
+2. [What is Next.js](#what-is-nextjs)
 3. [Getting Started](#getting-started)
 4. [Creating Tags and Releases](#creating-tags-and-releases)
 5. [Understanding the File Structure](#understanding-the-file-structure)
