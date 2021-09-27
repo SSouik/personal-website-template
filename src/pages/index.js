@@ -2,13 +2,15 @@ import React from 'react';
 import { 
     Banner, 
     Experience,
-    Reference, 
+    Reference,
+    Seo,
     Skillbar 
 } from '../components';
 
 export default function Home() {
     return (
         <div>
+            <Seo title='Home Page' description='This is the home page'/>
             <Banner/>
             <div className='row mt-5'>
                 <div id='experience' className='col-md-6 p-5 text-center'>

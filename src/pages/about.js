@@ -1,8 +1,10 @@
 import React from 'react';
+import Seo from '../components/Seo';
 
 const About = () => {
     return (
         <div id='about' className='row page-wrapper'>
+            <Seo title='About Me' description='This page is all about me'/>
             <div className='col-md-12'>
                 <div className='section-header'>
                     <h2 className='bg-header'>ABOUT ME</h2>

@@ -1,9 +1,10 @@
 import React from 'react';
-import { SkillExperience } from '../components';
+import { SkillExperience, Seo } from '../components';
 
 const Skills = () => {
     return (
         <div id='skills' className='row page-wrapper'>
+            <Seo title='Skills Page' description='This page talks about my skills'/>
             <div className='col-md-12'>
                 <div className='section-header mb-3'>
                     <h2 className='bg-header'>EXPERIENCE</h2>
