@@ -1,6 +1,6 @@
 # Personal Website Template
 
-This repo serves as a template to help you get started making a personal/resume webstie. The template uses React/Next.js which is a static site generator to create a static website meant to be hosted in a cloud provider such as [AWS](https://aws.amazon.com/) or [Azure](https://azure.microsoft.com/en-us/).
+This repo serves as a template to help you get started making a personal/resume webstie. The template uses React/Next.js which is a static site generator to create a static website meant to be hosted in a cloud provider such as [AWS](https://aws.amazon.com/).
 
 <br/>
 
@@ -32,9 +32,10 @@ This repo serves as a template to help you get started making a personal/resume 
 
 3. Clone your newly created repo
     ```bash
+    # Replace <personal-access-token> with your GitHub personal access token
     # Replace <username> with your github username or the repo owner's name
     # Replace <repo-name> with the name of the repo
-    git clone https://github.com/<owner-name>/<repo-name>.git
+    git clone https://<personal-access-token>github.com/<owner-name>/<repo-name>.git
     ```
 
 4. Run the website locally
@@ -89,7 +90,7 @@ This repo serves as a template to help you get started making a personal/resume 
 
     I. Update S3 bucket name on Line 53 in [`ci/release.yml`](ci/release.yml) Current -> `s3://mybucket`
 
-6. You need to create 3 repository secrets that will be used in [GitHub Actions](https://github.com/features/actions)
+6. You need to create 3 repository secrets that will be used in [GitHub Actions](https://github.com/features/actions) (Repo Settings -> Secrets)
 
     I. Name - `AWS_ACCESS_KEY_ID` | Value - `<your-aws-access-key-id>`
 
