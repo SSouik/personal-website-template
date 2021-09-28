@@ -18,6 +18,7 @@ export default function Home() {
                     <hr/>
                     <Experience
                         company='Company 1, Inc.'
+                        jobTitle='Job Title'
                         datesWorked='May 2021 - Present'
                     >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
@@ -32,6 +33,7 @@ export default function Home() {
                     </Experience>
                     <Experience
                         company='Company 2'
+                        jobTitle='Job Title'
                         datesWorked='September 2015 - April 2021'
                     >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
