@@ -6,20 +6,26 @@ const Seo = ({ title, description, meta }) => {
     const [imageSrc, setImageSrc] = useState('');
     const [href, setHref] = useState('');
 
-    const Meta = ({ type ='name', typeValue, content }) => {
+    const Meta = ({ type = 'name', typeValue, content }) => {
         if (type === 'name') {
             return <meta name={typeValue} content={content}/>;
         }
 
         return <meta property={typeValue} content={content}/>;
     };
+
+    Meta.propTypes = {
+        type: PropTypes.string,
+        typeValue: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired
+    };
     
-    const customMeta = meta?.map(m => {
+    const customMeta = meta?.map((m, i) => {
         if (m?.name) {
-            return <Meta type='name' typeValue={m?.name} content={m?.content}/>;
+            return <Meta key={i} type='name' typeValue={m?.name} content={m?.content}/>;
         }
 
-        return <Meta type='property' typeValue={m?.property} content={m?.content}/>;
+        return <Meta key ={i} type='property' typeValue={m?.property} content={m?.content}/>;
     });
 
     useEffect(() => {
