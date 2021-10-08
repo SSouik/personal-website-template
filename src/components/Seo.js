@@ -37,7 +37,7 @@ const Seo = ({ title, description, meta }) => {
         <Head>
             <title>{title}</title>
             <meta name='description' content={description}/>
-            <meta name='author' content='Samuel Souik <samuel.souik@gmail.com>'/>
+            <meta name='author' content='First Last <First.Last@example.com>'/>
             <meta name='application-name' content='Personal Website'/>
             <meta property='url' content={href}/>
             <meta property='og:title' content={title}/>
@@ -50,7 +50,7 @@ const Seo = ({ title, description, meta }) => {
             <meta name='twitter:description' content={description}/>
             <meta name='twitter:iamge:src' content={imageSrc}/>
             <meta name='twitter:card' content='summary'/>
-            <meta name='twitter:creator' content='Samuel Souik <samuel.souik@gmail.com>'/>
+            <meta name='twitter:creator' content='First Last <First.Last@example.com>'/>
             {customMeta.map(m => m)}
         </Head>
     )

@@ -9,5 +9,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
 
-  distDir: 'build'
+  distDir: 'build',
+  trailingSlash: true
 }
