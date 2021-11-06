@@ -6,15 +6,20 @@ env:
 extends:
   - 'eslint:recommended'
   - 'plugin:react/recommended'
+  - 'plugin:@typescript-eslint/recommended'
+parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaFeatures:
     jsx: true
-  ecmaVersion: 11
+    tsx: true
+  ecmaVersion: 12
   sourceType: module
-parser: 'babel-eslint'
 plugins:
   - react
-  - babel
+  - '@typescript-eslint'
+globals: {
+  'JSX': true
+}
 rules: {
   # POSSIBLE ERROR RULES
   'for-direction': 'error',
@@ -100,8 +105,8 @@ rules: {
   'no-shadow': 'warn',
   'no-undef': 'error',
   'no-undef-init': 'error',
-  'no-unused-vars': 'error',
-  'no-use-before-define': 'error',
+  'no-unused-vars': 'off', # disable and use typescript version
+  'no-use-before-define': 'off', # turn off and replace with '@typescript-eslint/no-use-before-define': ['error']
   # END VARIABLES
 
   # STYLISTIC
@@ -113,15 +118,20 @@ rules: {
   'semi': ['warn', 'always'],
   # END STYLISTIC
 
-  'react/no-unescaped-entities': 'off'
+  'react/require-render-return': 'off',
+  'react/no-unescaped-entities': 'off',
+
+  '@typescript-eslint/no-use-before-define': 'error',
+  '@typescript-eslint/no-unused-vars': 'error'
 }
 settings:
   import/resolver:
     node:
       extensions:
+        - .tsx
+        - .ts
         - .jsx
         - .js
-        - .json
   react:
     pragma: React
-    version: '16.0'
+    version: '17.0'

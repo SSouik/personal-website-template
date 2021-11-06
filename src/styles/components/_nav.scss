@@ -1,0 +1,113 @@
+nav {
+    background-color: transparent;
+    @include ease_in(.6s);
+
+    &.navbar {
+        display: -moz-box;
+        display: flex;
+        flex-wrap: wrap;
+        -moz-box-align: center;
+        align-items: center;
+        -moz-box-pack: justify;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        padding: 15px 0px;
+    }
+
+    .navbar-logo {
+        padding: 10px;
+    }
+
+    .navbar-items {
+        padding-right: 45px;
+        margin-left: auto; // align items to the right side
+        ul {
+            list-style: none;
+            li {
+                display: inline;
+                margin-right: 20px;
+                &:last-child {
+                    margin-right: 0px;
+                }
+                a {
+                    cursor: pointer;
+                    text-decoration: none;
+                    &.landing {
+                        color: $white;
+                        &:hover {
+                            color: darken($white, 10%);
+                        }
+                    }
+                    &:hover {
+                        color: darken($secondary, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-menu {
+        @extend .fa;
+        @extend .fa-bars;
+        cursor: pointer;
+        font-size: 32px;
+        display: none;
+        padding-right: 45px;
+        color: $primary;
+        margin-left: auto; // align items to the right side
+        @include ease_in(.6s);
+
+        &.landing {
+            color: $gray-800;
+        }
+    }
+
+    &.color-fill {
+        color: $white;
+        background-color: $primary;
+
+        .navbar-menu {
+            color: $white;
+        }
+
+        .navbar-items ul li a {
+            &:hover {
+                color: darken($white, 10%);
+            }
+        }
+    }
+
+    // Around 750px adjust nav bar for mobile
+    @include media-breakpoint-down(sm) {
+        .navbar-menu {
+            display: block;
+        }
+
+        .navbar-items {
+            display: none;
+            &.open {
+                display: block;
+            }
+
+            flex-basis: 100%;
+            -moz-box-flex: 1;
+            flex-grow: 1;
+            -moz-box-align: center;
+            margin: 0px;
+            ul {
+                padding-left: 20px;
+                li {
+                    display: block;
+                    margin-right: 0px;
+                    margin-bottom: 25px;
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,210 @@
+.context {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    
+    img {
+        position: absolute;
+        top: 25px;
+        left: 12px;
+    }
+
+    h1 {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translateX(-50%) translateY(-60%);
+        color: $white;
+    }
+
+    h3 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        color: $white;
+    }
+}
+
+.area {
+    background-color: $primary;  
+    width: 100%;
+    height:100vh;
+}
+
+.animated-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+
+    li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        bottom: -150px;
+
+        &.shape {
+            background: lighten($primary, 10%);
+            animation: animate_shape 25s linear infinite;
+        }
+
+        &:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        
+        &:nth-child(2) {
+            left: 10%;
+            width: 65px;
+            height: 65px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+         
+        &:nth-child(3) {
+            left: 70%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 4s;
+        }
+         
+        &:nth-child(4) {
+            left: 40%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+         
+        &:nth-child(5) {
+            left: 65%;
+            width: 65px;
+            height: 65px;
+            animation-delay: 0s;
+        }
+         
+        &:nth-child(6) {
+            left: 75%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 3s;
+        }
+         
+        &:nth-child(7) {
+            left: 35%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 7s;
+        }
+         
+        &:nth-child(8) {
+            left: 50%;
+            width: 90px;
+            height: 90px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+         
+        &:nth-child(9) {
+            left: 20%;
+            width: 70px;
+            height: 70px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+         
+        &:nth-child(10) {
+            left: 85%;
+            width: 65px;
+            height: 65px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+
+        &:nth-child(11) {
+            left: 5%;
+            width: 45px;
+            height: 45px;
+            animation-delay: 6s;
+            animation-duration: 9s;
+        }
+
+        &:nth-child(12) {
+            left: 15%;
+            width: 85px;
+            height: 85px;
+            animation-delay: 3s;
+            animation-duration: 16s;
+        }
+
+        &:nth-child(13) {
+            left: 90%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 8s;
+            animation-duration: 14s;
+        }
+
+        &:nth-child(14) {
+            left: 55%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 0s;
+            animation-duration: 10s;
+        }
+
+        &:nth-child(15) {
+            left: 30%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 3s;
+            animation-duration: 21s;
+        }
+    }
+}
+
+@keyframes animate_shape {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+ 
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .context {
+        h1 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .context {
+        h1 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+    }
+}  

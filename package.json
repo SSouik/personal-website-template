@@ -1,14 +1,15 @@
 {
   "name": "personal-website-template",
-  "version": "0.0.1",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next build && next start",
     "export": "next export",
-    "build-export": "next build && next export",
-    "lint": "eslint -c .eslintrc.yml --quiet --ext .js src"
+    "sitemap": "next-sitemap --config sitemap.config.js",
+    "build-export": "next build && yarn sitemap && next export",
+    "lint": "eslint -c .eslintrc.yml --quiet --ext .ts --ext .tsx src"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -18,10 +19,16 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.34",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "11.1.0",
     "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-react": "^7.25.1"
+    "eslint-plugin-react": "^7.25.1",
+    "next-sitemap": "^1.6.192",
+    "typescript": "^4.4.4"
   }
 }

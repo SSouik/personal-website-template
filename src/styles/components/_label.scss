@@ -1,0 +1,71 @@
+.lbl {
+    border-radius: 3px;
+    padding: 8px;
+
+    &.lbl-primary {
+        background-color: $primary;
+    }
+
+    &.lbl-secondary {
+        background-color: $secondary;
+    }
+
+    &.lbl-green {
+        background-color: $green;
+    }
+
+    &.lbl-blue {
+        background-color: $blue;
+    }
+
+    &.lbl-yellow {
+        background-color: $yellow;
+    }
+
+    &.lbl-red {
+        background-color: $red;
+    }
+
+    &.lbl-light {
+        background-color: $light;
+    }
+
+    &.lbl-dark {
+        background-color: $dark;
+    }
+
+    &.lbl-indigo {
+        background-color: $indigo;
+    }
+
+    &.lbl-purple {
+        background-color: $purple;
+    }
+
+    &.lbl-pink {
+        background-color: $pink;
+    }
+
+    &.lbl-orange {
+        background-color: $orange;
+    }
+
+    &.lbl-teal {
+        background-color: $teal;
+    }
+
+    &.lbl-cyan {
+        background-color: $cyan;
+    }
+}
+
+ul.label-list {
+    list-style-type: none;
+    padding-left: 0px;
+
+    li {
+        display: inline-block;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+}

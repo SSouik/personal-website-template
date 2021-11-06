@@ -1,5 +1,5 @@
 .footer {
-    position: relative;
+    position: absolute;
     bottom: 0px;
     height: 125px;
     @extend .container-fluid;
@@ -20,6 +20,13 @@
             margin-right: 20px;
             &:last-child {
                 margin-right: 0px;
+            }
+
+            a {
+                color: $primary;
+                &:hover {
+                    color: darken($primary, 20%);
+                }
             }
         }
     }

@@ -1,0 +1,5 @@
+@mixin ease_in($time: 1s) {
+    -moz-transition: all $time ease-in;
+    -webkit-transition: all $time ease-in;
+    transition: all $time ease-in;
+}

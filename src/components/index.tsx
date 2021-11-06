@@ -1,19 +1,19 @@
-import Banner from './Banner';
 import Experience from './Experience';
 import Footer from './Footer';
+import Label from './Label';
 import Nav from './Nav';
 import Reference from './Reference';
 import Seo from './Seo';
 import Skillbar from './SkillBar';
-import SkillExperience  from './SkillExperience';
+import Skill  from './Skill';
 
 export {
-    Banner,
     Experience,
     Footer,
+    Label,
     Nav,
     Reference,
     Seo,
     Skillbar,
-    SkillExperience
+    Skill
 }
