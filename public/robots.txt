@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.samuelsouik.com
+
+# Sitemaps
+Sitemap: https://www.samuelsouik.com/sitemap.xml

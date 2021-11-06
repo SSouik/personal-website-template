@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Seo from '../components/Seo';
 
-const NotFound = () => {
-    return (
-        <div id='not-found' className='row page-wrapper'>
+class NotFound extends Component {
+    public render = (): JSX.Element => (
+        <div id='not-found' className='row'>
             <Seo title='Not Found' description='The page you searched for has either been moved or does not exist.'/>
             <div className='col-md-12 center'>
                 <div className='section-header'>

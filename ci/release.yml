@@ -5,28 +5,23 @@ on:
     branches:
       - 'main'
     paths-ignore:
-      - 'docs/**' # Do not run this workflow if only files within the docs directory are changed
       - 'README.md'
-      - 'LICENSE*'
 jobs:
-  Install-Build-Test:
+  Build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
       - name: Checkout the source code
         uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Set up Node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.17.0
       - name: Install project dependencies
         run: yarn
-      - name: Build the code
-        run: yarn build-export
       - name: Run linter
         run: yarn lint
+      - name: Build the code
+        run: yarn build-export
       - name: Save build artifact
         uses: actions/upload-artifact@v2
         with:
@@ -34,14 +29,8 @@ jobs:
           path: out/
           if-no-files-found: error # if no files found, throw an error
           retention-days: 7 # Keep artifacts in GitHub for a week
-      - name: Create Tag
-        uses: anothrNick/github-tag-action@1.36.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-          RELEASE_BRANCHES: main
   Deploy:
-    needs: Install-Build-Test
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - name: Download build artifact
@@ -56,7 +45,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
       - name: Deploy To S3
-        run: aws s3 sync build s3://mybucket
+        run: aws s3 sync build s3://yourbucket # update me
       - name: Invalidate Cloudfront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/" "/sitemap.xml"
       

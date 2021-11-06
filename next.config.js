@@ -10,5 +10,9 @@ module.exports = {
   },
 
   distDir: 'build',
-  trailingSlash: true
+  trailingSlash: true,
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  }
 }
