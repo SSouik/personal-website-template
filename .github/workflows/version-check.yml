@@ -1,0 +1,30 @@
+name: Version Check
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+    paths-ignore:
+      - 'README.md'
+jobs:
+  Check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.17.0
+      - name: Compare Versions
+        id: check
+        uses: EndBug/version-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          diff-search: true
+      - name: Check Version
+        if: steps.check.outputs.changed == 'false' || steps.check.outputs.changed == ''
+        run: 'echo "Please update the version in package.json" && exit 1'
+      - name: Success
+        if: steps.check.outputs.changed == 'true'
+        run: 'echo "Version change found. New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'

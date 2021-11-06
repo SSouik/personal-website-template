@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.samuelsouik.com
+Host: https://www.mywesbite.com
 
 # Sitemaps
-Sitemap: https://www.samuelsouik.com/sitemap.xml
+Sitemap: https://www.mywesbite.com/sitemap.xml
