@@ -60,9 +60,8 @@ class Seo extends Component<Props, State> {
             <Head>
                 <title>{title}</title>
                 <link rel='icon' href='/favicon.ico'/>
-                <link rel='icon' type='img/png' href='/images/profile.png'/>
                 <meta name='description' content={description}/>
-                <meta name='author' content='Samuel Souik <me@samuelsouik.com>'/>
+                <meta name='author' content='First Last <first.last@example.com>'/>
                 <meta name='application-name' content='Personal Website'/>
                 <meta property='url' content={href}/>
                 <meta property='og:title' content={title}/>
@@ -75,7 +74,7 @@ class Seo extends Component<Props, State> {
                 <meta name='twitter:description' content={description}/>
                 <meta name='twitter:iamge:src' content={imageSrc}/>
                 <meta name='twitter:card' content='summary'/>
-                <meta name='twitter:creator' content='Samuel Souik <me@samuelsouik.com>'/>
+                <meta name='twitter:creator' content='First Last <first.last@example.com>'/>
                 {customMeta}
             </Head>
         )
