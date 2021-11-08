@@ -4,11 +4,17 @@ This repo serves as a template to help you get started making a personal/resume 
 
 <br/>
 
+**NOTE**
+> This repo is intended to be used with the [personal-website-terraform-template](https://github.com/SSouik/personal-website-terraform-template). If you are using the Terraform template, please set up that project and create the infrastructure in AWS before getting started with this project.
+
+<br/>
+
 # Table of Contents
 1. [What is React](#what-is-react)
 2. [What is Next.js](#what-is-nextjs)
 3. [Getting Started](#getting-started)
-4. [Understanding the File Structure](#understanding-the-file-structure)
+4. [Adding Secrets](#adding-secrets)
+5. [Understanding the File Structure](#understanding-the-file-structure)
 
 
 <br/>
@@ -25,7 +31,7 @@ This repo serves as a template to help you get started making a personal/resume 
 <br/>
 
 ## Getting Started
-1. Install Node -> [Download](https://nodejs.org/download/release/v14.17.0/)
+1. Install Node -> [14.17.0](https://nodejs.org/download/release/v14.17.0/)
 
 2. Create a new repository using this template
 
@@ -67,9 +73,19 @@ This repo serves as a template to help you get started making a personal/resume 
     # Create new branch, replace <branch-name> with the name of the branch
     git checkout -b <branch-name>
     ```
+6. Update the `siteUrl` in `sitemap.config.js` to your website's url
 
 <br/>
 
+
+## Adding Secrets
+This template requires the addition of three secrets within GitHub in order to auto deploy
+the site to S3 and Cloudfront.
+1. `AWS_ACCESS_KEY_ID` -> Value of your AWS access key id
+2. `AWS_SECRET_ACCESS_KEY` -> Value of your AWS secret access key
+3. `CLOUDFRONT_DISTRIBUTION_ID` -> Value of the Cloudfront distribution you are deploying to
+
+<br/>
 
 ## Understanding the File Structure
 - `.github/workflows` - contains GitHub Action workflows
