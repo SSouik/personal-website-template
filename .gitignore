@@ -32,3 +32,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# local .terraform directories and files
+.terraform/
+.terraform.*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
