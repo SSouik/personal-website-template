@@ -4,15 +4,13 @@ This repo serves as a template to help you get started making a personal/resume 
 
 <br/>
 
-**NOTE**
-> This repo is intended to be used with the [personal-website-terraform-template](https://github.com/SSouik/personal-website-terraform-template). If you are using the Terraform template, please set up that project and create the infrastructure in AWS before getting started with this project.
-
-<br/>
 
 # Table of Contents
 1. [What is React](#what-is-react)
 2. [What is Next.js](#what-is-nextjs)
 3. [Getting Started](#getting-started)
+    * [Node](#node)
+    * [Terraform](#terraform)
 4. [Adding Secrets](#adding-secrets)
 5. [Understanding the File Structure](#understanding-the-file-structure)
 
@@ -31,6 +29,7 @@ This repo serves as a template to help you get started making a personal/resume 
 <br/>
 
 ## Getting Started
+### Node
 1. Install Node -> [14.17.0](https://nodejs.org/download/release/v14.17.0/)
 
 2. Create a new repository using this template
@@ -74,6 +73,36 @@ This repo serves as a template to help you get started making a personal/resume 
     git checkout -b <branch-name>
     ```
 6. Update the `siteUrl` in `sitemap.config.js` to your website's url
+
+### Terraform
+Basic usage of terraform
+1. Initialize the Terraform
+    ```bash
+    terraform init
+    ```
+
+2. Validate
+    ```bash
+    terraform validate
+    ```
+
+3. Plan
+    ```bash
+    terraform plan -out=plan.tfplan
+    ```
+
+4. Apply
+    ```bash
+    terraform apply plan.tfplan
+    ```
+
+Other useful commands when using Terraform
+
+Format
+
+```bash
+terraform fmt -recursive
+```
 
 <br/>
 
