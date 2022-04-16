@@ -1,4 +1,4 @@
-name: Version Check
+name: Pull Request Checks
 
 on:
   pull_request:
@@ -6,8 +6,9 @@ on:
       - 'main'
     paths-ignore:
       - 'README.md'
+      - '.github/**'
 jobs:
-  Check:
+  version-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the source code
@@ -28,3 +29,35 @@ jobs:
       - name: Success
         if: steps.check.outputs.changed == 'true'
         run: 'echo "Version change found. New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.17.0
+      - name: Install
+        run: |
+          yarn install
+      - name: Lint
+        run: |
+          yarn lint
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.17.0
+      - name: Install
+        run: |
+          yarn install
+      - name: Build
+        run: |
+          yarn build-export
